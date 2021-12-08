@@ -14,7 +14,7 @@ Init.sleep = async (time) => {
 };
 
 Init.wait = () => {
-  const releaseTime = new Date(2021, 11, 8, 0, 0, 0).getTime();
+  const releaseTime = new Date(2021, 11, 9, 0, 0, 0).getTime();
   return new Promise((resolve) => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
