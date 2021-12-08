@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Meow</title>
+    <link href="index.css" rel="stylesheet" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Allura|Frijole|Varela+Round"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/tinycolor2@1.4.2/tinycolor.min.js"></script>
+  </head>
+  <body>
+    <div id="pre">
+      <div class="pre-title">
+        <span class="pre-title-text">离解锁时间还有：</span>
+      </div>
+      <div id="time" class="pre-time"></div>
+    </div>
+    <div id="final">
+      <div class="command">
+        <div id="command"></div>
+        <div class="print"></div>
+      </div>
+      <div class="console"></div>
+    </div>
+    <script src="gray.js" type="text/javascript"></script>
+    <script src="canvas.js"></script>
+    <script src="init.js"></script>
+    <script>
+      (async function () {
+        await Init.firstScene();
+        await Init.wait();
+        await Init.secondScene();
+        await Init.showCommand();
+        await Init.sleep(1000);
+        await Init.showPic();
+        await Init.sleep(1000);
+        const { width, height } = document
+          .getElementsByClassName("console")[0]
+          .getBoundingClientRect();
+        await Init.showPhoto("1.jpg", 20, 0, width, height);
+        await Init.sleep(3000);
+        await Init.showPhoto("4.jpg", 20, 0, width, height);
+        await Init.sleep(3000);
+        await Init.showPhoto("5.jpg", 20, 0, width, height);
+        await Init.sleep(3000);
+        await Init.showPhoto("6.jpg", 20, 0, width, height);
+        await Init.sleep(3000);
+        await Init.showInfo(0, 1000, 30, 800, 600);
+        await Init.closeInfo();
+        await Init.showPhoto("2.jpg", 1050, 30, 800, 600, -14);
+        await Init.sleep(1000);
+        await Init.showPhoto("3.jpg", 680, 800, 400, 600, 9);
+        await Init.showInfo(1, 1400, 400, 800, 600);
+      })();
+    </script>
+  </body>
+</html>
